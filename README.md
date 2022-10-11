@@ -1,5 +1,6 @@
 # 2022cce
 畫星星
+```cpp
 #include <stdio.h>
 int main()
 {
@@ -13,9 +14,10 @@ int main()
         printf("i:%d星星\n", i);
     }
 }
-
+```
 
 畫星星, 畫出等腰三角形
+```cpp
 #include <stdio.h>
 int main()
 {
@@ -33,9 +35,10 @@ int main()
 ///4樓1空格 7星
 ///5樓0空格 9星
 ///           跟2有關係 2*i-1
-
+```
 
 暴力法找最大公倍數
+```cpp
 ///分數想要約分 51/68
 /// 試全部的數字，看能不能整除
 #include <stdio.h>
@@ -54,9 +57,10 @@ int main()
     printf("ans: %d 可約分", ans);
     ///把答案印出來
 }
-
+```
 
 輾轉相除法
+```cpp
 #include <stdio.h>
 int main()
 {
@@ -71,3 +75,4 @@ int main()
     }
     printf("答案b: %d", b);
 }
+```

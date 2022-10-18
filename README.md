@@ -77,3 +77,99 @@ int main()
 }
 ```
 
+比較 int 整數 及 long long int 很長很長的整數 的差別
+```cpp
+///long long int?
+///很長 很長 的整數
+#include <stdio.h>
+int main()
+{///在x86的電腦架構下 int是32位元 可裝 9-10位
+    int n=9876543210;
+    printf("int 印出來 %d\n", n);///但是印錯了
+
+    ///可裝 19-20位數
+    long long int a=9876543210;///10位數
+    printf("long long int 印出來 %lld\n", a);
+                        ///英文的long long d
+}
+```
+
+最大公因數, 改用 long long int 很長很長的整數 來計算
+```cpp
+///最大公因數改用 long long int
+///scanf("lld", &a);讀入
+///printf("lld", a);印出
+#include <stdio.h>
+int main()
+{
+    long long int a, b; ///都是很長的整數
+    scanf("%lld %lld", &a, &b);///小心是小寫的字母LLD
+
+    long long int ans;
+    for( long long int i=1;i<=a;i++){
+        if( a%i==0 && b%i==0 ) ans=i;
+    }
+    printf("最大公因數是:%lld\n", ans);
+}
+```
+
+輾轉相除法改用 long long int 很長很長的整數來計算
+```cpp
+///改用輾轉相除法,找最大公因數
+///要用long long int 版本,數字很大
+#include <stdio.h>
+int main()
+{
+    long long int a,b,c;///老大，老二，老三
+    scanf("%lld %lld", &a, &b);
+    while(1){///迴圈一直做
+        c=a%b; ///老大 老二，算出老三(餘數)
+        printf("a:%lld c:%lld\n", a, b, c);
+        if( c==0 ) break;
+        a=b;
+        b=c;
+    }
+    printf("答案是:%lld\n",b);
+}
+```
+
+學習「10進位轉2進位」之前, 需要先學會一種「剝皮」的技巧
+```cpp
+#include <stdio.h>
+int main()
+{
+    ///請輸入9位數
+    int n;
+    scanf("%d", &n);
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+
+    printf("現在的個位數:%d\n",n%10);
+    n=n/10;
+}
+```
